@@ -1,0 +1,5 @@
+Cle API
+
+Utilisez cette clé dans votre application en la transmettant avec le paramètre key=API_KEY.
+
+AIzaSyCGJO2ifPaivWSFtXgNX6YGiYoHZOJkUtM
