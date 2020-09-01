@@ -7,7 +7,7 @@ export const Context=createContext()
 export const Datacenter = ({children}) => {
 
 
-    console.log('yooooo')
+    console.log('hey hey hey')
 
     return (
         <div>
