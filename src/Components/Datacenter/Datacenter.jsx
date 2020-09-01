@@ -5,6 +5,10 @@ import axios from 'axios';
 export const Context=createContext()
 
 export const Datacenter = ({children}) => {
+
+
+    console.log('yooooo')
+
     return (
         <div>
               <Context.Provider value={{}}>
