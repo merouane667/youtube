@@ -1,8 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Datacenter} from './Components/Datacenter/Datacenter';
+import {Datacenter} from './Datacenter/Datacenter';
 import { BrowserRouter as Router , Route,Switch } from 'react-router-dom';
 import youtube from './apis/youtube'
+import Home from './Components/Home';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div>
       <Datacenter>
       <Router>
-
+        <Route exact path='/' component={Home} />
       </Router>
       </Datacenter>
     </div>
