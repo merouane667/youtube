@@ -4,11 +4,12 @@ import Video from './Video';
 
 const Home = () => {
     const {dataState} = useContext(Context);
+   
     return (
         <div className="row ">
-            {dataState.map(data=>(
+            {dataState.map(video=>(
 
-            <Video profile={data}/>   
+            <Video video={video}/>   
 
         ))}
 
