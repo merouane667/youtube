@@ -31,6 +31,7 @@ export const Datacenter = ({children}) => {
                 setDataState(res.data)
             }
             fetch()
+
         }, []);
         console.log(dataState);
       
