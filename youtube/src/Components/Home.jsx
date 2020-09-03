@@ -6,13 +6,15 @@ const Home = () => {
     const {dataState} = useContext(Context);
    
     return (
-        <div className="row ">
-            {dataState.map(video=>(
+    <div className="container">
+            <div className="row mt-5">
+                    {dataState.map(video=>(
 
-            <Video video={video}/>   
+                    <Video video={video}/>   
 
-        ))}
+                ))}
 
+            </div>
     </div>
 
     );
