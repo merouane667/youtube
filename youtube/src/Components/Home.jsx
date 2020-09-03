@@ -7,7 +7,7 @@ const Home = () => {
    
     return (
     <div className="container">
-            <div className="row mt-5">
+            <div className="row mt-5 ">
                     {dataState.map(video=>(
 
                     <Video video={video}/>   
