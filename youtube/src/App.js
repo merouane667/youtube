@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import {Datacenter} from './Datacenter/Datacenter';
 import { BrowserRouter as Router , Route,Switch } from 'react-router-dom';
 import youtube from './apis/youtube'
