@@ -9,9 +9,15 @@ import Slider from './layout/Slider';
 
 const Playvideo = (props) => {
     const {id} = props.match.params;
-    const {dataState} = useContext(Context);
-    
 
+   
+
+    
+   
+    const subs="btn btn-danger btn-sm float-right";
+    const unsubs="btn btn-secondary btn-sm float-right";
+    const sub="Subscribe";
+    const unsub="Subscribed";
     return (
         <div>
         <div id="mainWrapper">
@@ -25,24 +31,20 @@ const Playvideo = (props) => {
             <section class="mainContent">
 
             <div className='section'>
-            <iframe width="420" height="315"  className='mt-5 iframe'
-            src={`https://www.youtube.com/embed/${id}`}>
-              
-            </iframe>
-                <h6 >Title</h6>
-                <p className="para" >
-                    title
-                    <br/> 
-                    DD/M/YYYY
-                </p>
-                <div className='d-flex justify-content-between'>
-                  <a href='#'>
-                  <i class="fa fa-thumbs-o-down mt-10 fa-2x"></i>
-                  <i class="fa fa-thumbs-o-up mt-10 fa-2x"></i>
-                  </a>
-                  </div>
-                <button className="btn btn-danger btn-sm float-center">subscribe</button>          
+                  <div className="card">
+                        <iframe width="420" height="315"  className='iframe align-middle'
+                          src={`https://www.youtube.com/embed/${id}`}>
+                        </iframe>
+                    <div className="card-body">
+                          <a href='#'>
+                          <i class="fa fa-thumbs-o-down mt-10 fa-2x"></i>
+                          <i class="fa fa-thumbs-o-up mt-10 fa-2x"></i>
+                          </a>
 
+                        
+                                   
+                </div>
+                </div>
             </div>
             </section>
 

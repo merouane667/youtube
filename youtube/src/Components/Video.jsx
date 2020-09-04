@@ -1,11 +1,22 @@
-import React from 'react';
+import React,{useContext,} from 'react';
 import {Link} from 'react-router-dom';
+import {Context} from '../Datacenter/Datacenter';
 import './Video.css';
 
 const Video = ({video}) => {
-    if(!video.id.videoId)
+    const {subscribe, subscribes}=useContext(Context);
+     if(!video.id.videoId)
     return ''
-    
+    const subs="btn btn-danger btn-sm float-right";
+    const unsubs="btn btn-secondary btn-sm float-right";
+    const sub="Subscribe";
+    const unsub="Subscribed";
+    const sendtodatacenter=()=>{
+     
+        subscribe(video.id.videoId)
+        
+    }
+  
 
     const url_img = video.snippet.thumbnails.default.url;
     const title = video.snippet.title ;
@@ -25,7 +36,10 @@ const Video = ({video}) => {
                     <br/> 
                     {new Date(date).toDateString()}
                 </p>
-                <button className="btn btn-danger btn-sm float-right">subscribe</button>          
+                <button onClick={sendtodatacenter} 
+                className={subscribes.filter(vid => vid.id.videoId === video.id.videoId).length>0?unsubs:subs}>
+                {subscribes.filter(vid => vid.id.videoId === video.id.videoId).length>0?unsub:sub}
+                </button>          
             </div>
         </div>
     );
