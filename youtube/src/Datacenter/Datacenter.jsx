@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useContext } from 'react';
 import { createContext } from 'react';
 
 import {youtube} from '../apis/youtube'
@@ -11,18 +11,20 @@ export const Context=createContext()
 
 export const Datacenter = ({children}) => {
         const [dataState,setDataState] = useState([])
+        const [subscribes, setSubscribe] = useState([])
 
-        // const fetchData =  async  ()=>{
-        //     const request = await youtube.get('search',
-        //     {params: {
-        //         part:'snippet',
-        //         maxResults: 5,
-        //         key: KEY,
-        //         q:'week'
-        //     }
-        //     });
-        // }
-        // fetchData()
+        const subscribe=(id)=>{
+
+
+        const subs=subscribes.filter(data=>data.id.videoId==id)
+         if(subs.length===0)
+         { 
+             setSubscribe([...subscribes,...dataState.filter(data=>data.id.videoId==id)])
+         }
+         else{
+             setSubscribe([...subscribes.filter(data=>data.id.videoId!=id)])
+         }
+        }
 
         useEffect(()  => {
             const fetch = async ()=>{
@@ -33,11 +35,10 @@ export const Datacenter = ({children}) => {
             fetch()
 
         }, []);
-        console.log(dataState);
       
     return (
         <div>
-              <Context.Provider value={{dataState}}>
+              <Context.Provider value={{dataState,subscribe,subscribes}}>
                 {children}
             </Context.Provider>
         </div>
